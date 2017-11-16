@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/tripledes.js"></script>
+	<script src="js/mode-ecb.js"></script>
+	<script>
+		var a = encryptByDES("123456","qwe")
+		console.log(a)
+		// DES加密
+		function encryptByDES(message, key) {
+			var keyHex = CryptoJS.enc.Utf8.parse(key);
+			var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+				mode: CryptoJS.mode.ECB,
+				padding: CryptoJS.pad.Pkcs7
+			});
+			return encrypted.toString();
+		}
+	</script>
+
+</html>

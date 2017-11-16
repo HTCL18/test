@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<img src="img/canvsa.jpg" id="b" />
+		<canvas id="a" width="1000" height="665" style="border:1px solid red;"></canvas>
+	</body>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script>
+		$("#b").on("click", function() {
+			var canvas1 = document.getElementById("a");
+			var cxt = canvas1.getContext("2d");
+			var img1 = document.getElementById("b");
+			console.log(img1)
+			cxt.drawImage(img1, 0, 0);
+		})
+		$(function(){
+			console.log(123123)
+			var canvas1 = document.getElementById("a");
+			var cxt = canvas1.getContext("2d");
+			var img1 = document.getElementById("b");
+			console.log(img1)
+			cxt.drawImage(img1, 0, 0);
+		})
+	</script>
+
+</html>

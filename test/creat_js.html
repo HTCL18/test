@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>First Canvas for CNBlogs</title>
+		<script src="EaselJS-0.8.1/lib/easeljs-0.8.1.min.js"></script>
+	</head>
+
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<script src="Scripts/Index.js"></script>
+	</body>
+	<script src="js/easeljs-0.8.2.min.js"></script>
+	<script>
+		var canvas;
+		var stage;
+		var txt;
+		var count = 0;
+		window.onload = function() {
+			canvas = document.getElementById("canvas");
+			// 创建一个舞台对象
+			stage = new createjs.Stage(canvas);
+			txt = new createjs.Text("Hello CNBlogs->", "20px Arial", "#ff7700");
+			stage.addChild(txt);
+
+			createjs.Ticker.addEventListener("tick", tick);
+		}
+
+		function tick(e) {
+			count++;
+			console.log(count)
+			txt.text = "Hello CNBlogs->" + count + "☺";
+			stage.update();
+		}
+	</script>
+
+</html>

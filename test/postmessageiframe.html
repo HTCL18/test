@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>有关如何装b的测试</title>
+	</head>
+
+	<body>
+		<div id="qaq">
+			<input type="text" value="" id="bb" />
+		</div>
+
+	</body>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			window.addEventListener("message", function(e) {
+				document.getElementById("bb").value = e.data;
+			});
+			window.addEventListener("storage", function() {
+				console.log(2222222);
+				//localStorage.getItem("A");
+			})
+		}
+	</script>
+
+</html>

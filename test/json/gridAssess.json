@@ -1,0 +1,139 @@
+{
+	"records": 10,
+	"total": 1,
+	"page": 1,
+	"rows": [
+		{
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第一网格",
+			"name": "钱宝辰",
+			"role": "网格员",
+			"sex": "男",
+			"tel": "15061823274",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		}, {
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第一网格",
+			"name": "邵金仙",
+			"role": "兼职网格员",
+			"sex": "男",
+			"tel": "15052238865",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		}, {
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第一网格",
+			"name": "杨军",
+			"role": "网格长",
+			"sex": "男",
+			"tel": "18636635833",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		},
+		{
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第二网格",
+			"name": "华诚",
+			"role": "网格长",
+			"sex": "男",
+			"tel": "13665182665",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		},
+		{
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第二网格",
+			"name": "吴小英",
+			"role": "兼职网格员",
+			"sex": "男",
+			"tel": "15949212385",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		},
+		{
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第二网格",
+			"name": "候惠明",
+			"role": "网格员",
+			"sex": "男",
+			"tel": "13915324107",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		},
+		{
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第三网格",
+			"name": "孙德明",
+			"role": "网格员",
+			"sex": "男",
+			"tel": "13771575906",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		},
+		{
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第三网格",
+			"name": "徐梅珍",
+			"role": "兼职网格员",
+			"sex": "男",
+			"tel": "13665182183",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		},
+		{
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第三网格",
+			"name": "曹振华",
+			"role": "网格长",
+			"sex": "男",
+			"tel": "13961898005",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		},
+		{
+			"community": "鸿泰苑第二社区综治中心",
+			"grid": "第四网格",
+			"name": "姚坚",
+			"role": "网格长",
+			"sex": "男",
+			"tel": "18151551890",
+			"completWork": "30",
+			"quality": "29",
+			"completSchedule": "29",
+			"satisfaction": "10",
+			"compositeScore": "98"
+		}
+	]
+}
+
+
+
+

@@ -1,0 +1,7 @@
+.tab{ width:98%;}
+.tab_menu ul{ width:98%; list-style:none;}
+.tab_menu li{ list-style:none; float:left; margin-right:4px; display:block; border-right:#4488BB solid 1px;border-left:#4488BB solid 1px; border-top:#4488BB solid 1px; cursor:pointer; color:#000; height:20px; width:auto; padding:5px;}
+.tab_box{ border:solid #4488BB 1px; padding:4px; height:auto; width:98%; float:left;}
+.tab_selected{ background:#4488BB;}
+.tab_displayNone{ display:none;}
+/* li{ background:#EEEEEE; list-style:none;} */

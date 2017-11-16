@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>有关如何装b的测试</title>
+	</head>
+
+	<body>
+		<!--view-->
+		<div id="qaq">
+			{{age}}<br />
+			<input type="text" v-model="age" style="outline: auto;" />
+			<h1  v-if="age>99">兄弟，你都这么大了啊</h1>
+			<h1  v-if="age<=99">兄弟，你还年轻啊</h1>
+			<script>alert("你是十八吗")</script>
+		</div>
+
+	</body>
+	<script src="js/vue.js"></script>
+	<script type="text/javascript">
+		/*model*/
+		var testdata = {
+			message: "召唤万岁",
+			qwe: "qwe",
+			age:99
+		}
+		/*实例*/
+		new Vue({
+			el: "#qaq",
+			data: testdata
+		})
+	</script>
+
+</html>

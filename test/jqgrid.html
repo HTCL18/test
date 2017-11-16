@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link href="res/css/learunui-framework.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/tabpanel.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/gridcss/jquery-ui-custom.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/gridcss/ui.multiselect.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/gridcss/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/gridcss/jqgrid.css" rel="stylesheet" type="text/css" />
+
+	<body>
+		<div id="page636_jTabControl1_tab1">
+			<div class="TDataGrid" id="page636_jDataGrid1">
+				<table id="page636_jDataGrid1_table"></table>
+				<div id="page636_jDataGrid1_pager"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script src="res/jqgrid/js/jquery-ui-custom.min.js"></script>
+	<script src="res/jqgrid/js/grid.locale-cn.js"></script>
+	<script src="res/jqgrid/js/jquery.jq.js"></script>
+	<script>
+		$(document).ready(function() {
+			jQuery('#page636_jDataGrid1_table').jqGrid({
+				url: "json/gridAssess.json",
+				//		mtype : "POST",
+				datatype: "json", //请求数据返回的类型。可选json,xml,txt
+				multiselect: false,
+				viewrecords: true,
+				autowidth: true,
+				rownumbers: true,
+				rownumWidth: 50,
+				shrinkToFit: true,
+				rowNum: 10, //每页显示记录数
+				rowList: [2, 10, 20, 50, 100], //可调整每页显示的记录数
+				sortname: 'name',
+				sortorder: 'desc',
+				viewrecords: true, //是否显示行数
+				emptyrecords: '无符合条件记录', //无数据时显示内容
+				gridview: true,
+				pager: $("#page636_jDataGrid1_pager"),
+				//		colNames:['所属网格','格员姓名','角色','性别','联系方式','完成工作量','办理质量','按期办结','群众满意度','综合评分'],
+				colModel: [{
+						label: "所属社区",
+						name: "community",
+						index: "community",
+						width: 120,
+						align: "center"
+					}, {
+						label: "所属网格",
+						name: "grid",
+						index: "grid",
+						width: 80,
+						align: "center"
+					}, {
+						label: "格员ID",
+						name: "gyId",
+						index: "gyId",
+						width: 10,
+						hidden: true
+					}, {
+						label: "格员姓名",
+						name: "name",
+						index: "name",
+						width: 60,
+						align: "center"
+					}, {
+						label: "职务",
+						name: "role",
+						index: "role",
+						width: 60,
+						align: "center"
+					}, {
+						label: "性别",
+						name: "sex",
+						index: "sex",
+						width: 40,
+						align: "center"
+					}, {
+						label: "联系电话", //原私人电话
+						name: "tel",
+						index: "tel",
+						width: 80,
+						align: "center"
+					}, {
+						label: "综合排名",
+						name: "rank",
+						index: "rank",
+						width: 40,
+						align: "center"
+					}, {
+						label: "操作",
+						name: "operation",
+						index: "operation",
+						width: 50,
+						align: "center",
+						formatter: function(cellvalue, options, rowObject) {
+							var html;
+							if(rowObject.gyId != null || rowObject.gyId != "") {
+								html = "<a href=\"#\"><img style=\"margin-left:10px\" onclick=\"openJBSX('" + rowObject.gyId + "','" + rowObject.name + "')\"  src='../res/image/gridui/jbsx.png'></img></a>" +
+									"<a href=\"#\"><img style=\"margin-left:10px\" onclick=\"openRCGZ('" + rowObject.gyId + "','" + rowObject.name + "')\"  src='../res/image/gridui/rcgz.png'></img></a>" +
+									"<a href=\"#\"><img style=\"margin-left:10px\" onclick=\"openMYD('" + rowObject.gyId + "','" + rowObject.name + "')\" src='../res/image/gridui/myd.png'></img></a>";
+							}
+							return html;
+						}
+					}
+					//		{
+					//			label: "完成工作量",
+					//			name: "completWork",
+					//			index: "completWork",
+					//			width: 50,
+					//			align: "center"
+					//		}, {
+					//			label: "办理质量",
+					//			name: "quality",
+					//			index: "quality",
+					//			width: 50,
+					//			align: "center"
+					//		}, {
+					//			label: "按期办结",
+					//			name: "completSchedule",
+					//			index: "completSchedule",
+					//			width: 50,
+					//			align: "center"
+					//		}, {
+					//			label: "群众满意度",
+					//			name: "satisfaction",
+					//			index: "satisfaction",
+					//			width: 50,
+					//			align: "center"
+					//		}, {
+					//			label: "综合评分",
+					//			name: "compositeScore",
+					//			index: "compositeScore",
+					//			width: 50,
+					//			align: "center"
+					//		}
+				],
+				width: '100%'
+				//		ondblClickRow: function openPage(pagename,target) {
+				//		  window.open('userBaseMsg.htm','_self');
+				//		}
+			}).navGrid('#page636_jDataGrid1_pager', {
+				edit: false,
+				add: false,
+				del: false,
+				search: false,
+				refresh: false
+			});
+			$('#page636_jDataGrid1_table').closest('.ui-jqgrid-bdiv').css({
+				'overflow-y': 'auto'
+			});
+			$('#page636_jDataGrid1_table').trigger('reloadGrid');
+		})
+	</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>有关如何装b的测试</title>
+	</head>
+
+	<body>
+		<div>
+			<input type="text" id="aa" value="" />
+		</div>
+		<iframe id="child" src="./postmessageiframe.html"></iframe>
+	</body>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		document.getElementById("aa").onkeydown = function() {
+			var aa = document.getElementById("aa").value;
+			window.frames[0].postMessage(aa, "http://127.0.0.1:8020/test/postmessageiframe.html");
+		}
+		$().ready(function(){
+			localStorage.setItem("A","我是zz");
+			setTimeout(function(){
+				console.log(11)
+				localStorage.setItem("A","我是zzy啊");
+			},5000)
+		})
+	</script>
+
+</html>

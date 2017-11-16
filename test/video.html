@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<video controls>该浏览器不支持在线播放</video>
+	</body>
+	<script>
+		var video = document.querySelector('video');
+		var mediaSource = new MediaSource();
+		video.src = URL.createObjectURL(mediaSource);
+
+		mediaSource.addEventListener('sourceopen', function() {
+			var sourceBuffer = mediaSource.addSourceBuffer('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+			fetchAB('https://nickdesaulniers.github.io/netfix/demo/frag_bunny.mp4', function(buf) {
+				sourceBuffer.addEventListener('updateend', function() {
+					mediaSource.endOfStream();
+					video.play();
+				});
+				sourceBuffer.appendBuffer(buf);
+			});
+		});
+
+		function fetchAB(url, cb) {
+			var xhr = new XMLHttpRequest();
+			xhr.open('get', url);
+			xhr.responseType = 'arraybuffer';
+			xhr.onload = function() { cb(xhr.response) };
+			xhr.send();
+		};
+	</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/startmenu.css" />
+	</head>
+
+	<body>
+		<div id="loading_background" class="loading_background" style="display: none;"></div>
+		<div id="loading" onclick="Loading(false);" style="left: 861px; display: none;">
+			<img src="img/loading.gif" style="vertical-align: middle;">
+		</div>
+		<div id="loadingGird">
+			<img src="img/loading.gif" style="vertical-align: middle;">
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/sense.js"></script>
+	<script>
+		$().ready(function() {
+			console.log(123123)
+			Loading(true);
+		})
+	</script>
+
+</html>

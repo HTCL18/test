@@ -1,0 +1,83 @@
+body{
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	background-color:#0A3F73;
+	/* #0A3F73 */
+	}
+	
+	img{
+	cursor: pointer;
+	}
+	#content{
+	margin-top:40px;
+	margin-left: auto;
+	margin-right: auto;
+	width:1100px;
+	height:864px;
+	}
+	
+	#retdiv{
+	height:90px;
+	width:170px;
+	float:left;
+	cursor:pointer;
+	background:url('/res/image/junpin/return.png') no-repeat scroll -40px -10px ;
+	margin-left: 20px;
+	}
+	
+	#logcontent{
+	width:980px;
+	height:120px ;
+	background:url('/res/image/junpin/background.png') no-repeat  scroll -260px -30px ;
+	margin-left: 170px
+	}
+	
+	.chosebtn{
+	margin-top:20px;
+	margin-left: auto;
+	line-height:80px;
+	margin-right: auto;
+	height:80px;
+	width:430px; 
+	text-align:center;
+	font-size: 40px;
+	cursor:pointer;
+	background:#D2AB10;
+	font-family: '微软雅黑','华文细黑' ! important;
+	color:white;
+	border:2px solid #0A3F73;
+	}
+	
+	.clearbtn{
+	float:right;
+	width:250px; 
+	background:#D36A2E;
+	margin-top:-82px;
+	margin-right:65px;
+	}
+	
+	#picView{
+	margin-top:15px;
+	background:#0A3F73;
+	height:500px;
+	width:1000px;
+	overflow:hidden; 
+	}
+	
+	.updown{
+	height:202px;
+/* 	background:black; */
+	}
+	
+	#csrbtn{
+	float:right;
+	width:80px;
+	height:404px;
+	margin-top: -450px;
+	margin-right: 20px;
+	}
+	
+	#down{
+	margin-top: 5px
+	}

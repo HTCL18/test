@@ -1,0 +1,37 @@
+<html>
+ <head>
+  <meta charset="UTF-8"> 
+  <title>Document</title>
+  <script language="javascript">
+	function doplaysnd()
+	{  
+		var obj=document.getElementById("bgsound");
+		var isie=(navigator.userAgent.indexOf("MSIE")>0 || navigator.userAgent.indexOf("Trident")>0);
+		try{
+			if(isie)
+			{
+				obj=document.getElementById("eggs_bgsound");
+				obj.src=obj.xsrc;
+			}
+			else
+				obj.play();
+			}catch(e)
+		{	 
+			obj=document.getElementById("eggs_bgsound");
+			obj.src=obj.xsrc;
+		}
+		}
+  </script>
+ </head>
+ <body onclick="doplaysnd()">
+    <bgsound src='' xsrc='/res/sound/alert.wav' loop='0' autostart='true' id='eggs_bgsound'>
+   
+	<audio id="bgsound"  preload="auto">
+		<source src="/res/sound/alert.wav"> 
+		<embd src="/res/sound/alert.wav"> 
+	</audio>
+	
+	
+
+ </body>
+</html>

@@ -1,0 +1,50 @@
+ body{
+    position:relative;
+    background: url('/res/image/junpin/terminalbg.png' ); 
+    font-size:35px;
+    font-family:'微软雅黑';
+    color:#323131;
+    }
+    input {
+    border:none;
+    background-color:transparent;
+    font-family:'微软雅黑';
+    outline:none;
+  	}	 	
+    #toppic{
+    	height:590px;
+    	width:100%;
+        background: url('/res/image/junpin/terminal.png') ;
+    	margin-top: 0px; 
+    	margin-left: 0px; 
+    }
+    .loginInfo{
+    margin-top:20px;
+    border-bottom: solid;
+    border-bottom-color:#E7D5D5;
+    width:600px;
+    height:60px
+    }
+    .txt{
+    height:35px;
+    margin-top: -15px;
+    font-size:30px;
+    width:180px;
+    }
+    .detail{
+    display:inline;
+    width:240px;
+    }
+    .bluetxt{
+    color:#1E4C7C;
+     font-size:20px;
+    }
+    .userinfo{
+    	margin-top:25px;font-size:18px;color:#1E4C7C ;float:left
+    }
+    .btn{
+    	background-color:#0A3F73;float:left;color:#fff;margin-top: 30px;margin-left: 85px;width:150px;height:80px;text-align:center; line-height: 80px;cursor:pointer;
+    }
+    .layout{
+    	margin-left: 26%;
+    }

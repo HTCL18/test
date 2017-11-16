@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>flex布局</title>
+	</head>
+	<!--http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html 详情-->
+	<body>
+		<div class="box">
+			<div style="height: 100px;width: 500px;border: 1px red solid;">1</div>
+			<div style="height: 100px;width: 500px;border: 1px red solid;">2</div>
+			<div style="height: 100px;width: 500px;border: 1px red solid;">3</div>
+			<div style="height: 100px;width: 500px;border: 1px red solid;">4</div>
+			<div style="height: 100px;width: 500px;border: 1px red solid;">5</div>
+			<div style="height: 100px;width: 500px;border: 1px red solid;">6</div>
+			<div style="height: 100px;width: 500px;border: 1px red solid;">7</div>
+		</div>
+	</body>
+	<style>
+		.box {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-end 
+		}
+	</style>
+
+</html>
