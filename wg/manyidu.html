@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/tc_css.css" />
+
+	<body>
+		<div class="head">
+			<div class="title">综合满意度评分（9月）</div>
+		</div>
+		<div class="piece">
+			<div class="drawecharts_small" id="drawEcharts"></div>
+			<div class="satisfaction">
+				<div>
+					<p>办结质量（29/30）</p>
+					<p>按期办结（29/30）</p>
+					<p>完成工作量（30/30）</p>
+					<p>群众满意度（10/10）</p>
+				</div>
+			</div>
+		</div>
+		<div class="head">
+			<div class="title">总体评价趋势</div>
+		</div>
+		<div class="piece drawecharts" id="drawEcharts1"></div>
+	</body>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/echarts.js"></script>
+	<script>
+		$(function() {
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('drawEcharts'));
+			// 指定图表的配置项和数据
+			var option = {
+				tooltip: {
+					formatter: "{a} <br/>{b} : {c}%"
+				},
+				series: [{
+					name: '业务指标',
+					type: 'gauge',
+					data: [{ value: 98 }],
+					startAngle: 210,
+					endAngle: -30,
+					splitLine:{
+						show: false
+					},
+					axisTick: {
+						show: false
+					},
+					axisLabel: {
+						show: false
+					},
+					detail: {
+						offsetCenter: [0,'30%'],
+						formatter: '{value}分'
+					}
+				}]
+			};
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+
+			// 基于准备好的dom，初始化echarts实例
+			var myChart1 = echarts.init(document.getElementById('drawEcharts1'));
+			// 指定图表的配置项和数据
+			var option1 = {
+				tooltip: {
+					trigger: 'axis'
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				xAxis: {
+					type: 'category',
+					boundaryGap: false,
+					data: ['1', '2', '3', '4', '5', '6', '7']
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: [{
+						name: '总体评价',
+						type: 'line',
+						stack: '总量',
+						data: [120, 132, 101, 134, 90, 230, 210]
+					}
+				]
+			};
+
+			// 使用刚指定的配置项和数据显示图表。
+			myChart1.setOption(option1);
+		})
+	</script>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/tc_css.css" />
+
+	<body>
+		<div class="head">
+			<div class="title">时间选择</div>
+		</div>
+		<div class="piece">
+			<input type="radio" class="yestoday" name="time" /><label>昨天</label>
+			<input type="radio" class="lastweek" name="time" /><label>上周</label>
+			<input type="radio" class="lastmontd" name="time" /><label>上月</label>
+			<input type="radio" class="lastyear" name="time" /><label>去年</label>
+		</div>
+		<div class="piece">
+			<input type="radio" class="custom" name="time" /><label>自定义</label>
+			<input id="StartTime" type="text" value="" class="time" onclick="pickerStart()" />&nbsp;&nbsp;到&nbsp;
+			<input id="EndTime" type="text" value="" class="time" onclick="pickerEnd()" />
+		</div>
+		<div class="head">
+			<div class="title">日常工作统计</div>
+			<div></div>
+		</div>
+		<div class="piece">
+			<div class="drawecharts_small" id="drawEcharts"></div>
+			<div class="drawecharts_small" id="drawEcharts1"></div>
+		</div>
+		<div class="piece">
+			<table>
+				<tr>
+					<td>任务类别</td>
+					<td>已完成</td>
+					<td>计划数</td>
+					<td>完成比例</td>
+				</tr>
+				<tr>
+					<td>重点人员</td>
+					<td>30</td>
+					<td>40</td>
+					<td>75%</td>
+				</tr>
+				<tr>
+					<td>重点目标物</td>
+					<td>30</td>
+					<td>40</td>
+					<td>75%</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="laydate/laydate.js"></script>
+	<script src="js/echarts.js"></script>
+	<script>
+		$(function() {
+			//切换皮肤，请查看skins下面皮肤库
+			! function() {
+				laydate.skin('MySelf'); 
+			}();
+			
+			//时间
+			start = {
+				elem: '#StartTime',
+				format: 'YYYY-MM-DD hh:mm:ss',
+				min: "1989-02-20", //设定最小日期为当前日期
+				max: '2099-06-16', //最大日期
+				istime: true,
+				choose: function(datas) {
+					end.min = datas; //开始日选好后，重置结束日的最小日期
+					end.start = datas //将结束日的初始值设定为开始日
+				}
+			};
+
+			end = {
+				elem: '#EndTime',
+				format: 'YYYY-MM-DD hh:mm:ss',
+				min: "1989-02-20",
+				max: '2099-06-16',
+				istime: true,
+				choose: function(datas) {
+					start.max = datas; //结束日选好后，充值开始日的最大日期
+				}
+			};
+			
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('drawEcharts'));
+			// 指定图表的配置项和数据
+			var option = {
+				title: {
+					text: '重点人员',
+					x: 'center',
+					y:'10%'
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					x: 'left',
+					y: 'center',
+					data: ['已完成', '未完成']
+				},
+				series: [{
+					name: '记录数：',
+					type: 'pie',
+					radius: '55%',
+					center: ['50%', '60%'],
+					data: [
+						{ value: 30, name: '已完成' },
+						{ value: 10, name: '未完成' }
+					],
+					itemStyle: {
+						emphasis: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					}
+				}]
+			};
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+			
+			// 基于准备好的dom，初始化echarts实例
+			var myChart1 = echarts.init(document.getElementById('drawEcharts1'));
+			// 指定图表的配置项和数据
+			var option1 = {
+				title: {
+					text: '重点目标物',
+					x: 'center',
+					y:'10%'
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					x: 'left',
+					y: 'center',
+					data: ['已完成', '未完成']
+				},
+				series: [{
+					name: '记录数：',
+					type: 'pie',
+					radius: '55%',
+					center: ['50%', '60%'],
+					data: [
+						{ value: 30, name: '已完成' },
+						{ value: 10, name: '未完成' }
+					],
+					itemStyle: {
+						emphasis: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					}
+				}]
+			};
+			// 使用刚指定的配置项和数据显示图表。
+			myChart1.setOption(option1);
+		})
+
+		function pickerStart() { //加载开始时间的timerPiker
+			if($("#EndTime").val() == "" || $("#EndTime").val() == "undefined") {
+				start.max = "";
+			}
+			laydate(start);
+		}
+
+		function pickerEnd() { //加载结束的时间的timerPicker
+			if($("#StartTime").val() == "" || $("#StartTime").val() == "undefined") {
+				end.min = "";
+			}
+			laydate(end);
+		}
+	</script>
+
+</html>
